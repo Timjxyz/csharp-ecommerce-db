@@ -13,6 +13,16 @@ public class Order
     public List<Quantity> QuantityId { get; set; }
     public int CustomerId { get; set; }
     public Customer Customer { get; set; }
+
+    public int GetAmount()
+    {
+         int somma = 0;
+        foreach(Product product in this.ProductId)
+        {
+                somma+= product.Price;
+                }
+        return somma;
+    }
 }
 
 
